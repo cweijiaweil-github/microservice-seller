@@ -1,23 +1,9 @@
-eureka:
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://wjw:123456@172.17.0.3:9100/eureka
-server:
-  port: 8081
 spring:
-  application:
-    name: app-seller
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    password: root
-    url: jdbc:mysql://172.17.0.2:3306/emart_seller?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
-    username: root
-  jpa:
-    database: MYSQL
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+  cloud:
+    config:
+      label: master
+      name: microservice
+      profile: sellerdb
+      uri: http://172.17.0.5:8077
   main:
-    allow-bean-definition-overriding: true
+    allow-bean-definition-overriding: true 
