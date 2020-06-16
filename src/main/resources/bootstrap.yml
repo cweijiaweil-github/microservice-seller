@@ -4,6 +4,6 @@ spring:
       label: master
       name: microservice
       profile: sellerdb
-      uri: http://172.17.0.5:8077
+      uri: http://host.docker.internal:8077
   main:
     allow-bean-definition-overriding: true 
